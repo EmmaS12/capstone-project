@@ -72,9 +72,8 @@ Wireframes
  
 
 
-![Screenshot 2025-04-19 at 3.10.43 PM](https://hackmd.io/_uploads/r1AVSdbJgx.png)
 
-![Screenshot 2025-04-19 at 3.19.21 PM](https://hackmd.io/_uploads/BJSHP_Zylx.png)
+![Screenshot 2025-04-19 at 3.26.23 PM](https://hackmd.io/_uploads/Hy9ytdbyeg.png)
 
 
 
