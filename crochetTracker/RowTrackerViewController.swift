@@ -11,20 +11,37 @@ class RowTrackerViewController: UIViewController {
     
     //row label shows row number
     @IBOutlet weak var rowLabel: UILabel!
+    //row counter starts at zero when the app launches
+    var currentRow = 0 {
+        //block of code that runs everytime row variable changes
+        didSet {
+            //updates the row label on the screen to show the new number
+            rowLabel?.text="\(currentRow)"
+            //This saves the row number whenever it changes, like after a button pressed
+            UserDefaults.standard.set(currentRow, forKey: "currentRow")
+
+                
+        }
+    }
+    
     // + button to increase row number
     @IBAction func increaseRow(_ sender: UIButton) {
+        currentRow += 1
     }
+    
     // - button to decrease row number
     @IBAction func decreaseRow(_ sender: UIButton) {
+        if currentRow > 0{
+            currentRow -= 1
+        }
     }
     override func viewDidLoad() {
         
-        var currentRow = 0 //row counter starts at zero when the app launches
-        
-        
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //This loads the saved row number when the app starts.
+        currentRow = UserDefaults.standard.integer(forKey: "currentRow")
+
     }
 
 
