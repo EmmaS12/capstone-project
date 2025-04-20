@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct CrochetProject{
+    var name: String
+    var currentRow: Int
+}
+
+let Project = CrochetProject(name:"Scarf", currentRow:1)

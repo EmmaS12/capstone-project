@@ -30,9 +30,13 @@ class RowTrackerViewController: UIViewController {
     }
     
     // - button to decrease row number
+    
     @IBAction func decreaseRow(_ sender: UIButton) {
         if currentRow > 0{
             currentRow -= 1
+            print("decreaseRow tapped — currentRow is now: \(currentRow)")
+                } else {
+                    print("Already at row 0, can't decrease")
         }
     }
     override func viewDidLoad() {
