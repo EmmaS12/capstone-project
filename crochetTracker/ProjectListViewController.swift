@@ -9,7 +9,7 @@ import UIKit
 class ProjectListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
-    // Connected to the Table View in Main.storyboard
+    // Connected a UITableView from storyboard to my code
     @IBOutlet weak var tableView: UITableView!
     
     //array of test projects and rownumbers
@@ -30,18 +30,42 @@ class ProjectListViewController: UIViewController, UITableViewDelegate, UITableV
                 tableView.delegate = self
     }
     
-    // Tells the table how many rows to show
+    /* Tells the table how many rows to show
+     returns number of porjects(each project becomes one row)
+    */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return projects.count
     }
 
-    // Creates the content for each row (aka cell)
+    /* Creates the content for each row (aka cell)
+     Reuses cells for performance (dequeueReusableCell)
+     Fills in project name and row number
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath)
         let project = projects[indexPath.row]
         cell.textLabel?.text = "\(project.name) — Row \(project.currentRow)"
         return cell
     }
+    
+    /*
+     If the screen we’re navigating to is a RowTrackerViewController, save it as destinationVC so we can pass data to it
+     segue.destination This is the screen we're going to (in this case, the Row Tracker screen)
+     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRowTracker" {
+            let destinationVC = segue.destination as? RowTrackerViewController
+            if let indexPath = tableView.indexPathForSelectedRow { //Asks the table view: “Hey, which row was tapped?”
+                let selectedProject = projects[indexPath.row] //Grabs the correct project from your array
+                destinationVC?.currentProject = selectedProject
+            }
+            
+        }
+        
+        
+    }
+    
+    
 
     /*
     // MARK: - Navigation

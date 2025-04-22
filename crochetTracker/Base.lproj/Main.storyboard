@@ -28,6 +28,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="sgT-tz-UDe">
+                                                <string key="identifier">showRowTracker
+</string>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -92,6 +98,7 @@
                             <constraint firstItem="BWX-6B-MEn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jnP-Yx-yAj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Rfc-XK-mk3"/>
                     <string key="userLabel">RowTrackerViewController
 RowTrackerViewController
 RowTrackerViewController</string>
