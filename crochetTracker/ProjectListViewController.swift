@@ -12,6 +12,7 @@ class ProjectListViewController: UIViewController, UITableViewDelegate, UITableV
     //It gets called when a new project is created in the Create Project Screen
     func didCreateProject(_ project: CrochetProject) {
         //add the new project to the list of projects
+        print("🏷 didCreateProject received:", project)  
         projects.append(project)
         //reload the table view so it updates and shows the new project
         tableView.reloadData()
@@ -69,8 +70,12 @@ class ProjectListViewController: UIViewController, UITableViewDelegate, UITableV
             }
             
         }
-        
-        
+        else if segue.identifier == "createProject" {
+            print("▶️ prepare: createProject segue fired")                  // 🔍
+               let destinationVC = segue.destination as? CreateProjectViewController
+               destinationVC?.delegate = self
+            print("   delegate set to self:", destinationVC?.delegate as Any) // 
+           }
     }
     
     

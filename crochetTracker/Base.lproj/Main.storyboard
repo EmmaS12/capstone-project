@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Project List-->
         <scene sceneID="8mI-6b-vm1">
             <objects>
                 <viewController id="x07-ll-Zny" customClass="ProjectListViewController" customModule="crochetTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-eU-ZBs">
-                                <rect key="frame" x="76" y="362" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-eU-ZBs">
+                                <rect key="frame" x="76" y="178" width="240" height="590"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProjectCell" id="TjG-ll-YGz">
@@ -40,8 +39,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PD3-4d-T7v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zfu-eU-ZBs" firstAttribute="leading" secondItem="PD3-4d-T7v" secondAttribute="leading" constant="76" id="3aC-ek-Cda"/>
+                            <constraint firstItem="zfu-eU-ZBs" firstAttribute="top" secondItem="PD3-4d-T7v" secondAttribute="top" constant="16" id="E2e-MZ-xEF"/>
+                            <constraint firstItem="zfu-eU-ZBs" firstAttribute="centerX" secondItem="53H-g6-W4I" secondAttribute="centerX" id="seo-mf-DLf"/>
+                            <constraint firstItem="PD3-4d-T7v" firstAttribute="bottom" secondItem="zfu-eU-ZBs" secondAttribute="bottom" constant="16" id="xGS-cW-vNQ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="gta-k4-6ux">
+                    <navigationItem key="navigationItem" title="Project List" id="gta-k4-6ux">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KsD-5U-KsY">
                             <connections>
                                 <segue destination="Lbo-bq-HsZ" kind="presentation" identifier="createProject" id="Af5-kh-Shv"/>
@@ -60,7 +65,7 @@
         <scene sceneID="aww-fo-wi1">
             <objects>
                 <viewController id="Lbo-bq-HsZ" customClass="CreateProjectViewController" customModule="crochetTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fld-lV-m6V" customClass="ADdProjectViewController">
+                    <view key="view" contentMode="scaleToFill" id="fld-lV-m6V" userLabel="Create Project View Controller">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

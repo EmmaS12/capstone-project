@@ -26,14 +26,16 @@ class CreateProjectViewController: UIViewController {
         
         //user writes project or user enters nothing project doesn't save
         guard let name = projectName.text, !name.isEmpty else {
+            print("⚠️ save tapped but name field was empty")
             return
         }
         //creating a new project row is always 0 for new project
-        var newProject = CrochetProject(name: name, currentRow: 0)
-        
+        let newProject = CrochetProject(name: name, currentRow: 0)
+        print("✅ save tapped, created newProject:", newProject)
         //Send the new project back to whoever is listening (delegate)
         delegate?.didCreateProject(newProject)
-        
+        print("📣 didCreateProject called on delegate:", delegate as Any) // 🔍
+
         // Close the Add Project screen
         dismiss(animated: true, completion: nil)
 
