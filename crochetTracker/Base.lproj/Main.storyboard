@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Projects-->
+        <!--Title-->
         <scene sceneID="8mI-6b-vm1">
             <objects>
                 <viewController id="x07-ll-Zny" customClass="ProjectListViewController" customModule="crochetTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,13 @@
                         <viewLayoutGuide key="safeArea" id="PD3-4d-T7v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Projects" id="kc9-Kp-AEq"/>
+                    <navigationItem key="navigationItem" title="Title" id="gta-k4-6ux">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KsD-5U-KsY">
+                            <connections>
+                                <segue destination="Lbo-bq-HsZ" kind="presentation" identifier="createProject" id="Af5-kh-Shv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="zfu-eU-ZBs" id="86j-Cs-DXg"/>
                     </connections>
@@ -55,7 +61,7 @@
             <objects>
                 <viewController id="Lbo-bq-HsZ" customClass="CreateProjectViewController" customModule="crochetTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fld-lV-m6V" customClass="ADdProjectViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Project Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ja2-k8-noM">

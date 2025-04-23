@@ -1,5 +1,5 @@
 //
-//  AddProjectViewController.swift
+//  CreateProjectViewController.swift
 //  crochetTracker
 //
 //  Created by Emma Saccone on 4/23/25.
@@ -7,7 +7,19 @@
 
 import UIKit
 
+//protocol to send a new project back to the previous screen
+//Any class that adopts this must implement the didCreateMethod
+protocol CreateProjectDelegate: AnyObject {
+    func didCreateProject(_ project: CrochetProject)
+}
+
+
 class CreateProjectViewController: UIViewController {
+    
+    //The delegate is someone who "listens" for when a new project is created
+    //we'll call this later to send the project back to the ProjectListViewController
+    weak var delegate: CreateProjectDelegate?
+
 
     //save project
     @IBAction func saveButtonTapped(_ sender: UIButton) {
@@ -18,6 +30,13 @@ class CreateProjectViewController: UIViewController {
         }
         //creating a new project row is always 0 for new project
         var newProject = CrochetProject(name: name, currentRow: 0)
+        
+        //Send the new project back to whoever is listening (delegate)
+        delegate?.didCreateProject(newProject)
+        
+        // Close the Add Project screen
+        dismiss(animated: true, completion: nil)
+
     }
     
     @IBOutlet weak var projectName: UITextField!

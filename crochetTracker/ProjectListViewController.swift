@@ -6,9 +6,17 @@
 //
 import UIKit
 
-class ProjectListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProjectListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CreateProjectDelegate {
 
-    
+    //This function is required by the CreateProjectDelegate protocol
+    //It gets called when a new project is created in the Create Project Screen
+    func didCreateProject(_ project: CrochetProject) {
+        //add the new project to the list of projects
+        projects.append(project)
+        //reload the table view so it updates and shows the new project
+        tableView.reloadData()
+    }
+
     // Connected a UITableView from storyboard to my code
     @IBOutlet weak var tableView: UITableView!
     
