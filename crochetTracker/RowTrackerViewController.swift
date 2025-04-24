@@ -55,4 +55,3 @@ class RowTrackerViewController: UIViewController {
 
     }
 }
-
